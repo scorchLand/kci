@@ -9,8 +9,13 @@ public class Hero : Unit
     {
         transform.position = transform.position += Vector3.up * Time.deltaTime;
         if (Vector3.Distance(Truck.TestPlayer.transform.position, transform.position) < 0.7f)
-            Destroy(gameObject);
-        if(transform.position.y > 20)
-            Destroy(gameObject);
+            OnCrash();
+        if (transform.position.y > 20)
+            OnCrash();
+    }
+    private void OnCrash()
+    {
+        Destroy(gameObject);
+        ObjectiveEvent<long>.OnTruckCrash(new EventData<long>(1));
     }
 }
