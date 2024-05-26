@@ -5,12 +5,14 @@ public enum EObjective
 {
     NONE,
     TRUCK_CRASH,
+    TRUCK_DISTANCE_UPDATE,
 }
 public static class ObjectiveEvent<T>
 {
     //public static bool IsLogging { get; } = false;
 
     public static event Action<EventData<T>> onTruckCrash;
+    public static event Action<EventData<T>> onTruckDictanceUpdate;
 
     public static void AddObjectiveAction(EObjective type, Action<EventData<T>> action)
     {
@@ -18,6 +20,9 @@ public static class ObjectiveEvent<T>
         {
             case EObjective.TRUCK_CRASH:
                 onTruckCrash += action;
+                break;
+            case EObjective.TRUCK_DISTANCE_UPDATE:
+                onTruckDictanceUpdate += action;
                 break;
         }
     }
@@ -28,11 +33,18 @@ public static class ObjectiveEvent<T>
             case EObjective.TRUCK_CRASH:
                 onTruckCrash -= action;
                 break;
+            case EObjective.TRUCK_DISTANCE_UPDATE:
+                onTruckDictanceUpdate -= action;
+                break;
         }
     }
     public static void OnTruckCrash(EventData<T> data)
     {
         onTruckCrash?.Invoke(data);
+    }
+    public static void OnTruckDictanceUpdate(EventData<T> data)
+    {
+        onTruckDictanceUpdate?.Invoke(data);
     }
 }
 public class EventData<T>

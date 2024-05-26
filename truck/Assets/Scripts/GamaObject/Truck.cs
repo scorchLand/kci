@@ -7,6 +7,7 @@ public class Truck : Unit
     private const float _laneOffet = -2;
     public static Truck TestPlayer;
     public bool IsRightMove {get; private set;}
+    public float truckSpeed = 1;
 
     public int CurrentLane {get; private set;}
     private void Awake()
@@ -41,6 +42,7 @@ public class Truck : Unit
     }
     private void Update()
     {
+        ObjectiveEvent<float>.OnTruckDictanceUpdate(new EventData<float>(truckSpeed));
         if(Input.GetMouseButtonDown(0))
         {
             ChangeLane();

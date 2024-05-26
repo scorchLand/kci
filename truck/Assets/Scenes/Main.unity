@@ -425,6 +425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a82cef67281bd6d4a96bc7c503bf1183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  truckSpeed: 60
 --- !u!1001 &8076951212904918272
 PrefabInstance:
   m_ObjectHideFlags: 0
