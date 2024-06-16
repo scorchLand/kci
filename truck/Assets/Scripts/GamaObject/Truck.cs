@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Truck : Unit
 {
-    private const float _laneOffet = -2;
+    private const float interval = 2.06f;
+    private const float _laneOffet = -4.12f;
     public static Truck TestPlayer;
     public bool IsRightMove {get; private set;}
     public float truckSpeed = 1;
@@ -17,34 +18,26 @@ public class Truck : Unit
     private void Start()
     {
         UpdateLanePosition();
-        UpdateDierection();
-    }
-
-    public void UpdateDierection()
-    {
-        if(CurrentLane >= 4)
-            IsRightMove = false;
-        if(CurrentLane <= 0)
-            IsRightMove = true;
     }
 
     public void UpdateLanePosition()
     {
-        transform.position = new Vector3(CurrentLane + _laneOffet, 5, 0);
+        transform.position = new Vector3((CurrentLane * interval) + _laneOffet, 7, 0);
     }
     public void ChangeLane()
     {
-        if (IsRightMove)
-            CurrentLane++;
-        else
-            CurrentLane--;
-        UpdateDierection();
+        CurrentLane += IsRightMove ? 1 : -1;
+        if (CurrentLane > 4)
+            CurrentLane = 4;
+        if (CurrentLane < 0)
+            CurrentLane = 0;
     }
     private void Update()
     {
         ObjectiveEvent<float>.OnTruckDictanceUpdate(new EventData<float>(truckSpeed));
         if(Input.GetMouseButtonDown(0))
         {
+            IsRightMove = Camera.main.ScreenToViewportPoint(Input.mousePosition).x >= 0.5f;
             ChangeLane();
             UpdateLanePosition();
         }
