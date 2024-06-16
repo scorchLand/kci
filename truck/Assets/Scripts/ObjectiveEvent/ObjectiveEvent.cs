@@ -12,7 +12,7 @@ public static class ObjectiveEvent<T>
     //public static bool IsLogging { get; } = false;
 
     public static event Action<EventData<T>> onTruckCrash;
-    public static event Action<EventData<T>> onTruckDictanceUpdate;
+    public static event Action<EventData<T>> onTruckDistanceUpdate;
 
     public static void AddObjectiveAction(EObjective type, Action<EventData<T>> action)
     {
@@ -22,7 +22,7 @@ public static class ObjectiveEvent<T>
                 onTruckCrash += action;
                 break;
             case EObjective.TRUCK_DISTANCE_UPDATE:
-                onTruckDictanceUpdate += action;
+                onTruckDistanceUpdate += action;
                 break;
         }
     }
@@ -34,7 +34,7 @@ public static class ObjectiveEvent<T>
                 onTruckCrash -= action;
                 break;
             case EObjective.TRUCK_DISTANCE_UPDATE:
-                onTruckDictanceUpdate -= action;
+                onTruckDistanceUpdate -= action;
                 break;
         }
     }
@@ -44,7 +44,7 @@ public static class ObjectiveEvent<T>
     }
     public static void OnTruckDictanceUpdate(EventData<T> data)
     {
-        onTruckDictanceUpdate?.Invoke(data);
+        onTruckDistanceUpdate?.Invoke(data);
     }
 }
 public class EventData<T>
