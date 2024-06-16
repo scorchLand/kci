@@ -22,7 +22,7 @@ public class Hero : Unit
         if (Vector3.Distance(Truck.TestPlayer.transform.position, transform.position) < 2f)
             OnCrash();
         if (transform.position.y > 20)
-            OnCrash();
+            OnDisapoint();
     }
     private void OnTruckDistanUpdate(EventData<float> distance)
     {
@@ -32,5 +32,9 @@ public class Hero : Unit
     {
         Destroy(gameObject);
         ObjectiveEvent<long>.OnTruckCrash(new EventData<long>(1));
+    }
+    private void OnDisapoint()
+    {
+        Destroy(gameObject);
     }
 }
