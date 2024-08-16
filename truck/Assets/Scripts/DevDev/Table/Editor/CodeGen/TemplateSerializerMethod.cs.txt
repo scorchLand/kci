@@ -1,0 +1,45 @@
+        private static void Serialize@Name(Scheme scheme)
+        {
+            var list = new List<@RowName>();
+            var sheet = scheme.Sheet;
+            int firstDataRowNum = sheet.FirstRowNum + 3;
+            int lastDataRowNum = sheet.LastRowNum;
+            
+            int columnIndex = 0;
+@DefineParser
+
+            for (int i = firstDataRowNum; i <= lastDataRowNum; i++)
+            {
+                var row = sheet.GetRow(i);
+                if (row.GetCell(0).IsNullOrEmpty())
+                {
+                    continue;
+                }
+                                
+                columnIndex = 0;
+                var rowObj = new @RowName(
+@ConstructorParam
+                );
+                
+                list.Add(rowObj);
+            }
+
+            if (Directory.Exists("@ExportPath") == false)
+            {
+                Directory.CreateDirectory("@ExportPath");
+            }
+
+            using (var stream = new FileStream("@ExportPath/@TableName.bytes", FileMode.Create))
+            {
+                Serializer.SerializeToStream(stream, list, _Encrypt: true, _EncryptionKey: TableManager.SECURE_KEY);
+            }
+            
+            //if (Directory.Exists("@ExportPath/Json") == false)
+            //{
+            //    Directory.CreateDirectory("@ExportPath/Json");
+            //}
+            
+            //string json = Newtonsoft.Json.JsonConvert.SerializeObject(list, Newtonsoft.Json.Formatting.Indented);
+            //File.WriteAllText("@ExportPath/Json/@TableName.json.txt", json, System.Text.Encoding.UTF8);
+        }
+        
