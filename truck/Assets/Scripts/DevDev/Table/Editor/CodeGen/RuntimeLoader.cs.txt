@@ -1,0 +1,26 @@
+//This code was automatically generated.
+//Don't edit this code.
+
+
+using System.Collections.Generic;
+using System.IO;
+using OPS.Serialization.IO;
+using UnityEngine;
+
+namespace @Namespace
+{
+    public static class Tables
+    {
+@TableImplement
+        
+        public static void LoadFromPath(string path)
+        {
+@MethodImplement
+        }
+        
+        public static void LoadFromResources()
+        {
+@2MethodImplement
+        }
+    }
+}

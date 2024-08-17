@@ -1,0 +1,29 @@
+//This code was automatically generated.
+//Don't edit this code.
+
+using DevDev.Table;
+using OPS.Serialization.Attributes;
+
+namespace @Namespace
+{
+    [SerializeAbleClass]
+    public partial class @RowName : IRow<@KeyType>
+    {
+@RowImplement
+
+        public int Index { get; set; }
+        
+        public @RowName() {}
+
+        public @RowName(@RowConstructorParam)
+        {
+@RowConstructorImpl
+        }
+    }
+
+    [SerializeAbleClass]
+    public partial class @TableName : Table<@RowName, @KeyType>
+    {
+@TableImplement
+    }
+}
