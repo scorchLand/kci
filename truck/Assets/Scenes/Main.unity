@@ -477,7 +477,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3465822363204956309, guid: ea6a1a6ece4b1914e8b2f2896c639000, type: 3}
       propertyPath: truckSpeed
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5292115846846124625, guid: ea6a1a6ece4b1914e8b2f2896c639000, type: 3}
       propertyPath: m_LocalPosition.x

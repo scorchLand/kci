@@ -23,7 +23,7 @@ public class BackgroundController : MonoBehaviour
     {
         foreach (var lain in lains)
         {
-            lain.transform.position += vector * data.data * Time.deltaTime;
+            lain.transform.position += vector * data.data * Time.deltaTime * 0.01f;
             if (lain.transform.position.y > finalY)
             {
                 lain.transform.position += -vector * (finalY * 2);

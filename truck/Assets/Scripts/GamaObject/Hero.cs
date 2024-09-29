@@ -27,7 +27,7 @@ public class Hero : Unit
     }
     private void OnTruckDistanUpdate(EventData<float> distance)
     {
-        transform.position += BackgroundController.vector * Time.deltaTime * distance.data;
+        transform.position += BackgroundController.vector * Time.deltaTime * distance.data * 0.01f;
     }
     private void OnCrash()
     {
