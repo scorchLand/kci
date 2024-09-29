@@ -18,9 +18,10 @@ public class Truck : Unit
 
         var list = new List<Vector3>()
         {
-            new Vector3(1.15f, 1f, 0),
-            new Vector3(1.725f, 0.7f, 0),
-            new Vector3(2.3f, 0.4f, 0),
+            new Vector3(0f, 3.2f, 0),
+            new Vector3(1.15f, 2.6f, 0),
+            new Vector3(2.3f, 2f, 0),
+            new Vector3(3.45f, 1.4f, 0),
         };
         TestPlayer.transform.position = list[0];
         _lainList.AddRange(list);
@@ -32,7 +33,6 @@ public class Truck : Unit
 
     public void UpdateLanePosition()
     {
-        Debug.Log(_currentLain);
         transform.position = _lainList[_currentLain];
     }
     public void ChangeLane()

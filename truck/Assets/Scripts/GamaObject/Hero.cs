@@ -20,7 +20,7 @@ public class Hero : Unit
     void Update()
     {
         transform.position += vector * Time.deltaTime * Speed;
-        if (Vector3.Distance(Truck.TestPlayer.transform.position, transform.position) < 0.5f)
+        if (Vector3.Distance(Truck.TestPlayer.transform.position, transform.position) < 1f)
             OnCrash();
         if (transform.position.y > 20)
             OnDisapoint();
