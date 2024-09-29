@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Hero : Unit
 {
-    public bool IsLeft { get; private set; } = true;
+    public bool IsLeft => vector.x > 0;
+    public Vector3 vector { get; private set; } = Vector3.zero;
     public float Speed { get; private set; }
     private void OnEnable()
     {
-        Speed = Random.Range(0, 10);
-        IsLeft = Random.Range(0, 2) == 1 ? true : false;
+        Speed = Random.Range(0, 1);
+        vector = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
         ObjectiveEvent<float>.onTruckDistanceUpdate += OnTruckDistanUpdate;
     }
     private void OnDisable()
@@ -18,15 +19,15 @@ public class Hero : Unit
     }
     void Update()
     {
-        transform.position += (IsLeft ? Vector3.left : Vector3.right) * Time.deltaTime * Speed;
-        if (Vector3.Distance(Truck.TestPlayer.transform.position, transform.position) < 2f)
+        transform.position += vector * Time.deltaTime * Speed;
+        if (Vector3.Distance(Truck.TestPlayer.transform.position, transform.position) < 0.5f)
             OnCrash();
         if (transform.position.y > 20)
             OnDisapoint();
     }
     private void OnTruckDistanUpdate(EventData<float> distance)
     {
-        transform.position += Vector3.up * Time.deltaTime * distance.data;
+        transform.position += BackgroundController.vector * Time.deltaTime * distance.data;
     }
     private void OnCrash()
     {

@@ -19,7 +19,7 @@ public class TestSpawnTime
     public void Spawn(Hero[] hero, Transform contaner)
     {
         var target = GameObject.Instantiate(hero[Random.Range(0, hero.Length)], contaner);
-        target.transform.position = new Vector3(Random.Range(-4.12f, 4.12f), -20, 0);
+        target.transform.position = new Vector3(-5, Random.Range(-1f, -4f), 0);
         nextSpawnDistance += Row.RepeatDistance;
     }
 }
@@ -50,7 +50,7 @@ public class TestSpawner : MonoBehaviour
         {
             yield return new WaitForSeconds(Random.Range(0f,2f));
             var target = Instantiate(hero[Random.Range(0,hero.Length)], Contaner);
-            target.transform.position = new Vector3(Random.Range(-4.12f, 4.12f), -20, 0);
+            target.transform.position = new Vector3(-5, Random.Range(-1f,-4f), 0);
         }
     }
     public void InitializeSpwner()

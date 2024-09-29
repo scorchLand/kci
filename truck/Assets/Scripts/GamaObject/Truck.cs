@@ -4,16 +4,26 @@ using UnityEngine;
 
 public class Truck : Unit
 {
-    private const float interval = 2.06f;
-    private const float _laneOffet = -4.12f;
     public static Truck TestPlayer;
-    public bool IsRightMove {get; private set;}
-    public float truckSpeed = 1;
+    public IReadOnlyList<Vector3> LainList => _lainList;
+    public bool IsRightMove { get; private set; }
+    public float truckSpeed = 0.3f;
 
-    public int CurrentLane {get; private set;}
+    private List<Vector3> _lainList = new List<Vector3>();
+    private int _currentLain = 0;
+    private bool _isLeft = true;
     private void Awake()
     {
         TestPlayer = this;
+
+        var list = new List<Vector3>()
+        {
+            new Vector3(1.15f, 1f, 0),
+            new Vector3(1.725f, 0.7f, 0),
+            new Vector3(2.3f, 0.4f, 0),
+        };
+        TestPlayer.transform.position = list[0];
+        _lainList.AddRange(list);
     }
     private void Start()
     {
@@ -22,15 +32,18 @@ public class Truck : Unit
 
     public void UpdateLanePosition()
     {
-        transform.position = new Vector3((CurrentLane * interval) + _laneOffet, 7, 0);
+        Debug.Log(_currentLain);
+        transform.position = _lainList[_currentLain];
     }
     public void ChangeLane()
     {
-        CurrentLane += IsRightMove ? 1 : -1;
-        if (CurrentLane > 4)
-            CurrentLane = 4;
-        if (CurrentLane < 0)
-            CurrentLane = 0;
+        int nextLain = _currentLain;
+        nextLain += _isLeft ? 1 : -1;
+        if (nextLain >= _lainList.Count)
+            _isLeft = false;
+        else if (nextLain < 0)
+            _isLeft = true;
+        _currentLain += _isLeft ? 1 : -1;
     }
     private void Update()
     {

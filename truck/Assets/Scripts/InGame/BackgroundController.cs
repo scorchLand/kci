@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class BackgroundController : MonoBehaviour
 {
-    private const float finalY = 12.4f;
-    private const float finalY2 = 16;
+    public static Vector3 vector = new Vector3(2.3f, 1.15f, 0f);
+    private const float finalY = 5;
     public List<GameObject> lains = new List<GameObject>();
-
-    public List<GameObject> lains2 = new List<GameObject>();
 
     private void Awake()
     {
@@ -25,18 +23,10 @@ public class BackgroundController : MonoBehaviour
     {
         foreach (var lain in lains)
         {
-            lain.transform.position += Vector3.up * data.data * Time.deltaTime;
+            lain.transform.position += vector * data.data * Time.deltaTime;
             if (lain.transform.position.y > finalY)
             {
-                lain.transform.position += Vector3.down * 2 * finalY;
-            }
-        }
-        foreach (var lain in lains2)
-        {
-            lain.transform.position += Vector3.up * data.data * Time.deltaTime;
-            if (lain.transform.position.y > finalY2)
-            {
-                lain.transform.position += Vector3.down * 2 * finalY2;
+                lain.transform.position += -vector * (finalY * 2);
             }
         }
     }
