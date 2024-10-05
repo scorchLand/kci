@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -293,6 +293,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 929437279}
     m_Modifications:
+    - target: {fileID: 738841026231325080, guid: 466d29d6690393d40b3aaf20a9420083, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1009783203179480867, guid: 466d29d6690393d40b3aaf20a9420083, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1009783203179480867, guid: 466d29d6690393d40b3aaf20a9420083, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1009783203179480867, guid: 466d29d6690393d40b3aaf20a9420083, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1009783203179480867, guid: 466d29d6690393d40b3aaf20a9420083, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1764855402364739200, guid: 466d29d6690393d40b3aaf20a9420083, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1764855402364739200, guid: 466d29d6690393d40b3aaf20a9420083, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1764855402364739200, guid: 466d29d6690393d40b3aaf20a9420083, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 357
+      objectReference: {fileID: 0}
+    - target: {fileID: 1764855402364739200, guid: 466d29d6690393d40b3aaf20a9420083, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -31
+      objectReference: {fileID: 0}
     - target: {fileID: 3341948353961901964, guid: 466d29d6690393d40b3aaf20a9420083, type: 3}
       propertyPath: m_Name
       value: UiLobby
@@ -375,6 +411,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4097903219055804514, guid: 466d29d6690393d40b3aaf20a9420083, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738107169867059596, guid: 466d29d6690393d40b3aaf20a9420083, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738107169867059596, guid: 466d29d6690393d40b3aaf20a9420083, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738107169867059596, guid: 466d29d6690393d40b3aaf20a9420083, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5738107169867059596, guid: 466d29d6690393d40b3aaf20a9420083, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
