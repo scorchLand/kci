@@ -17,6 +17,7 @@ public class SpawnSystem : MonoBehaviour
             var info = new SpawnerInfo();
             _list.Add(info);
             _dictionary.Add("", info);
+            break;
         }
     }
     public void Initialize()

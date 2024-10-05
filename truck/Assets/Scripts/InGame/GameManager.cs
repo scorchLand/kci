@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Grooz;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     private void Awake()
     {
+        DontDestroyOnLoad(this);
         Initialize();
     }
     private void OnDestroy()
@@ -16,7 +18,7 @@ public class GameManager : MonoBehaviour
 
     public void Initialize()
     {
-
+        Tables.LoadFromResources();
     }
 
     public void Dispose()
