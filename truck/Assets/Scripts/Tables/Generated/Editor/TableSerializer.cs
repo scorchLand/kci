@@ -164,7 +164,7 @@ namespace Grooz.Editor
 			var KeyParser = scheme.Columns[columnIndex++].Parser as global::DevDev.Table.Editor.TypeParser.Implements.StringParser;
 			var DestXParser = scheme.Columns[columnIndex++].Parser as global::DevDev.Table.Editor.TypeParser.Implements.FloatParser;
 			var DestYParser = scheme.Columns[columnIndex++].Parser as global::DevDev.Table.Editor.TypeParser.Implements.FloatParser;
-			var DurationTimeParser = scheme.Columns[columnIndex++].Parser as global::DevDev.Table.Editor.TypeParser.Implements.IntParser;
+			var SpeedParser = scheme.Columns[columnIndex++].Parser as global::DevDev.Table.Editor.TypeParser.Implements.IntParser;
 
 
             for (int i = firstDataRowNum; i <= lastDataRowNum; i++)
@@ -180,7 +180,7 @@ namespace Grooz.Editor
 					KeyParser.Parse(scheme.Columns[columnIndex++], row),
 					DestXParser.Parse(scheme.Columns[columnIndex++], row),
 					DestYParser.Parse(scheme.Columns[columnIndex++], row),
-					DurationTimeParser.Parse(scheme.Columns[columnIndex++], row)
+					SpeedParser.Parse(scheme.Columns[columnIndex++], row)
                 );
                 
                 list.Add(rowObj);
