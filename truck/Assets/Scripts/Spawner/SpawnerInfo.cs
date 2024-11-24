@@ -1,3 +1,4 @@
+using DevDev.Extensions;
 using Grooz;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,25 +9,44 @@ public class SpawnerInfo
     public RowSpwaner Row { get; private set; }
     public bool IsActivate { get; private set; }
 
-    public float duration = 1;
+    public float NextSpawnDistance { get; private set; } = 0;
 
     public SpawnerInfo(RowSpwaner row)
     { 
         Row = row;
-    }
-    public void Update()
-    {
 
+        NextSpawnDistance = Row.DistanceMin;
     }
-    private void Spawn(Vector3 targetPosition)
+    public void Update(float distance)
     {
-
+        if (distance > Row.DistanceMax)
+        {
+            InGameController.Instance.spawnSystem.RemoveSpawnList(this);
+            return;
+        }
+        else if (distance > NextSpawnDistance)
+        {
+            NextSpawnDistance += Row.RepeatDistance;
+            //var spawnRate = Random.Range(0, Row.Rate);
+            //if (spawnRate > Row.Rate)
+            //{
+            //    Spawn();
+            //}
+            Spawn();
+        }
+    }
+    private void Spawn()
+    {
+        var hero = InGameController.Instantiate(Resources.Load<Hero>("Prefabs/GameObject/hero"));
+        var floatInfo = Row.Lood.StringToFloatArray();
+        var targetPosition = new Vector3(floatInfo[0], floatInfo[1], floatInfo[2]);
+        hero.transform.position = targetPosition;
     }
     private IEnumerator RoutineSpawn()
     {
         while (IsActivate)
         {
-            yield return new WaitForSeconds(duration);
+
         }
         yield break;
     }

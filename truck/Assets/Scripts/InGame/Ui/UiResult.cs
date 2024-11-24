@@ -19,6 +19,6 @@ public class UiResult : UiComponent
     }
     public void OnClickRestart()
     {
-
+        SceneController.SceneChange(EScene.Main);
     }
 }
