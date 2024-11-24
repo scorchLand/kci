@@ -40,6 +40,9 @@ public class SpawnerInfo
         var hero = InGameController.Instantiate(Resources.Load<Hero>($"Prefabs/Monster/{Row.Prefabs}"));
         var floatInfo = Row.Lood.StringToFloatArray();
         var targetPosition = new Vector3(floatInfo[0], floatInfo[1], floatInfo[2]);
+        var moveInfo = Tables.Move.Get(Row.MoveKey);
+        Vector3 targetP = new Vector3(moveInfo.DestX, moveInfo.DestY).normalized;
+        hero.SetVector(targetP, moveInfo.Speed);
         hero.transform.position = targetPosition;
     }
     private IEnumerator RoutineSpawn()
