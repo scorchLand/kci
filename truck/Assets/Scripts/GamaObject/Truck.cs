@@ -8,6 +8,8 @@ public class Truck : Unit
     public IReadOnlyList<Vector3> LainList => _lainList;
     public bool IsRightMove { get; private set; }
     public float truckSpeed = 0.3f;
+    public float MaxHp { get; private set; } = 30;
+    public float CurrentHp { get; private set; }
 
     private List<Vector3> _lainList = new List<Vector3>();
     private int _currentLain = 0;
@@ -25,6 +27,7 @@ public class Truck : Unit
         };
         TestPlayer.transform.position = list[0];
         _lainList.AddRange(list);
+        CurrentHp = MaxHp;
     }
     private void Start()
     {
@@ -34,6 +37,14 @@ public class Truck : Unit
     public void UpdateLanePosition()
     {
         transform.position = _lainList[_currentLain];
+    }
+    public void GetFule()
+    {
+        CurrentHp += 5;
+        if(CurrentHp > MaxHp )
+        {
+            CurrentHp = MaxHp;
+        }
     }
     public void ChangeLane()
     {
@@ -47,6 +58,12 @@ public class Truck : Unit
     }
     private void Update()
     {
+        CurrentHp -= Time.deltaTime;
+        if (CurrentHp < 0)
+        {
+            Destroy(gameObject);
+            return;
+        }
         ObjectiveEvent<float>.OnTruckDictanceUpdate(new EventData<float>(truckSpeed));
         if(Input.GetMouseButtonDown(0))
         {

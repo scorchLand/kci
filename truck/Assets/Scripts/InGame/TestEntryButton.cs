@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UiEntryStartButton : UiComponent
+public class TestEntryButton : MonoBehaviour
 {
     public void OnClick()
     {
