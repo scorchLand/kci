@@ -6,11 +6,10 @@ public class Hero : Unit
 {
     public bool IsLeft => vector.x > 0;
     public Vector3 vector { get; private set; } = Vector3.zero;
-    public float Speed { get; private set; }
+    public float Speed = 10;
     private void OnEnable()
     {
-        Speed = Random.Range(0, 1);
-        vector = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
+        vector = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0).normalized;
         ObjectiveEvent<float>.onTruckDistanceUpdate += OnTruckDistanUpdate;
     }
     private void OnDisable()
