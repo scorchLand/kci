@@ -27,12 +27,11 @@ public class SpawnerInfo
         else if (distance > NextSpawnDistance)
         {
             NextSpawnDistance += Row.RepeatDistance;
-            //var spawnRate = Random.Range(0, Row.Rate);
-            //if (spawnRate > Row.Rate)
-            //{
-            //    Spawn();
-            //}
-            Spawn();
+            var spawnRate = Random.Range(0, Row.Rate);
+            if (spawnRate < Row.Rate)
+            {
+                Spawn();
+            }
         }
     }
     private void Spawn()

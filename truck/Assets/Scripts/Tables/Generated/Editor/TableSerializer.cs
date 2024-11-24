@@ -289,7 +289,7 @@ namespace Grooz.Editor
 			var DistanceMinParser = scheme.Columns[columnIndex++].Parser as global::DevDev.Table.Editor.TypeParser.Implements.LongParser;
 			var DistanceMaxParser = scheme.Columns[columnIndex++].Parser as global::DevDev.Table.Editor.TypeParser.Implements.LongParser;
 			var RepeatDistanceParser = scheme.Columns[columnIndex++].Parser as global::DevDev.Table.Editor.TypeParser.Implements.LongParser;
-			var RateParser = scheme.Columns[columnIndex++].Parser as global::DevDev.Table.Editor.TypeParser.Implements.LongParser;
+			var RateParser = scheme.Columns[columnIndex++].Parser as global::DevDev.Table.Editor.TypeParser.Implements.FloatParser;
 			var MaxSpwanParser = scheme.Columns[columnIndex++].Parser as global::DevDev.Table.Editor.TypeParser.Implements.LongParser;
 			var MonsterParser = scheme.Columns[columnIndex++].Parser as global::DevDev.Table.Editor.TypeParser.Implements.StringParser;
 			var ScoreParser = scheme.Columns[columnIndex++].Parser as global::DevDev.Table.Editor.TypeParser.Implements.LongParser;
