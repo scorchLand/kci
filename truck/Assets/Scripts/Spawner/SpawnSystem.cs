@@ -1,3 +1,4 @@
+using Grooz;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,9 +13,9 @@ public class SpawnSystem : MonoBehaviour
 
     public SpawnSystem()
     {
-        while (true)
+        for(int i = 0; i<Tables.Spwaner.Count;i++)
         {
-            var info = new SpawnerInfo();
+            var info = new SpawnerInfo(Tables.Spwaner.List[i]);
             _list.Add(info);
             _dictionary.Add("", info);
             break;
@@ -26,5 +27,12 @@ public class SpawnSystem : MonoBehaviour
     public void Dispose()
     {
 
+    }
+    private void Update()
+    {
+        foreach(var info in _list)
+        {
+            info.Update();
+        }
     }
 }
