@@ -297,6 +297,7 @@ namespace Grooz.Editor
 			var IncreaseHpScaleParser = scheme.Columns[columnIndex++].Parser as global::DevDev.Table.Editor.TypeParser.Implements.FloatParser;
 			var LoodParser = scheme.Columns[columnIndex++].Parser as global::DevDev.Table.Editor.TypeParser.Implements.StringParser;
 			var MoveKeyParser = scheme.Columns[columnIndex++].Parser as global::DevDev.Table.Editor.TypeParser.Implements.StringParser;
+			var PrefabsParser = scheme.Columns[columnIndex++].Parser as global::DevDev.Table.Editor.TypeParser.Implements.StringParser;
 
 
             for (int i = firstDataRowNum; i <= lastDataRowNum; i++)
@@ -320,7 +321,8 @@ namespace Grooz.Editor
 					IncreaseAtkScaleParser.Parse(scheme.Columns[columnIndex++], row),
 					IncreaseHpScaleParser.Parse(scheme.Columns[columnIndex++], row),
 					LoodParser.Parse(scheme.Columns[columnIndex++], row),
-					MoveKeyParser.Parse(scheme.Columns[columnIndex++], row)
+					MoveKeyParser.Parse(scheme.Columns[columnIndex++], row),
+					PrefabsParser.Parse(scheme.Columns[columnIndex++], row)
                 );
                 
                 list.Add(rowObj);

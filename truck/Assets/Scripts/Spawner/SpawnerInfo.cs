@@ -10,6 +10,7 @@ public class SpawnerInfo
     public bool IsActivate { get; private set; }
 
     public float NextSpawnDistance { get; private set; } = 0;
+    public int CurrentSpawnCount { get; private set; } = 0;
 
     public SpawnerInfo(RowSpwaner row)
     { 
@@ -36,7 +37,7 @@ public class SpawnerInfo
     }
     private void Spawn()
     {
-        var hero = InGameController.Instantiate(Resources.Load<Hero>("Prefabs/GameObject/hero"));
+        var hero = InGameController.Instantiate(Resources.Load<Hero>($"Prefabs/Monster/{Row.Prefabs}"));
         var floatInfo = Row.Lood.StringToFloatArray();
         var targetPosition = new Vector3(floatInfo[0], floatInfo[1], floatInfo[2]);
         hero.transform.position = targetPosition;
