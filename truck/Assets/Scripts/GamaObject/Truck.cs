@@ -2,12 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum EState
+{
+    None,
+    Dead,
+}
 public class Truck : Unit
 {
     public static Truck TestPlayer;
     public IReadOnlyList<Vector3> LainList => _lainList;
     public bool IsRightMove { get; private set; }
     public float truckSpeed = 0.3f;
+    public float MaxHp { get; private set; } = 30;
+    public float CurrentHp { get; private set; }
+    public EState State { get; private set; }
 
     private List<Vector3> _lainList = new List<Vector3>();
     private int _currentLain = 0;
@@ -25,6 +33,7 @@ public class Truck : Unit
         };
         TestPlayer.transform.position = list[0];
         _lainList.AddRange(list);
+        CurrentHp = MaxHp;
     }
     private void Start()
     {
@@ -34,6 +43,14 @@ public class Truck : Unit
     public void UpdateLanePosition()
     {
         transform.position = _lainList[_currentLain];
+    }
+    public void GetFule()
+    {
+        CurrentHp += 5;
+        if(CurrentHp > MaxHp )
+        {
+            CurrentHp = MaxHp;
+        }
     }
     public void ChangeLane()
     {
@@ -47,6 +64,15 @@ public class Truck : Unit
     }
     private void Update()
     {
+        if(State == EState.Dead) 
+            return;
+        CurrentHp -= Time.deltaTime;
+        if (CurrentHp < 0)
+        {
+            ObjectiveEvent<string>.OnTruckFuleDown(new EventData<string>());
+            OnTruckDead();
+            return;
+        }
         ObjectiveEvent<float>.OnTruckDictanceUpdate(new EventData<float>(truckSpeed));
         if(Input.GetMouseButtonDown(0))
         {
@@ -54,5 +80,9 @@ public class Truck : Unit
             ChangeLane();
             UpdateLanePosition();
         }
+    }
+    private void OnTruckDead()
+    {
+        State = EState.Dead;
     }
 }
