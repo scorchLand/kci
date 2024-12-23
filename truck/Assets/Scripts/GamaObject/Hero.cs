@@ -4,17 +4,13 @@ using UnityEngine;
 
 public class Hero : Unit
 {
-    public bool IsLeft => Vector.x > 0;
-    public Vector3 Vector { get; private set; } = Vector3.zero;
-    public float Speed = 10;
-    public void SetVector(Vector3 vector, float speed)
-    {
-        Vector = vector;
-        Speed = speed;
-    }
+    public bool IsLeft => vector.x > 0;
+    public Vector3 vector { get; private set; } = Vector3.zero;
+    public float Speed { get; private set; }
     private void OnEnable()
     {
-        Vector = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0).normalized;
+        Speed = Random.Range(0, 1);
+        vector = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
         ObjectiveEvent<float>.onTruckDistanceUpdate += OnTruckDistanUpdate;
     }
     private void OnDisable()
@@ -23,7 +19,7 @@ public class Hero : Unit
     }
     void Update()
     {
-        transform.position += Vector * Time.deltaTime * Speed;
+        transform.position += vector * Time.deltaTime * Speed;
         if (Vector3.Distance(Truck.TestPlayer.transform.position, transform.position) < 1f)
             OnCrash();
         if (transform.position.y > 20)

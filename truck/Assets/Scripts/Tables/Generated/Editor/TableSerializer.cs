@@ -164,7 +164,7 @@ namespace Grooz.Editor
 			var KeyParser = scheme.Columns[columnIndex++].Parser as global::DevDev.Table.Editor.TypeParser.Implements.StringParser;
 			var DestXParser = scheme.Columns[columnIndex++].Parser as global::DevDev.Table.Editor.TypeParser.Implements.FloatParser;
 			var DestYParser = scheme.Columns[columnIndex++].Parser as global::DevDev.Table.Editor.TypeParser.Implements.FloatParser;
-			var SpeedParser = scheme.Columns[columnIndex++].Parser as global::DevDev.Table.Editor.TypeParser.Implements.IntParser;
+			var DurationTimeParser = scheme.Columns[columnIndex++].Parser as global::DevDev.Table.Editor.TypeParser.Implements.IntParser;
 
 
             for (int i = firstDataRowNum; i <= lastDataRowNum; i++)
@@ -180,7 +180,7 @@ namespace Grooz.Editor
 					KeyParser.Parse(scheme.Columns[columnIndex++], row),
 					DestXParser.Parse(scheme.Columns[columnIndex++], row),
 					DestYParser.Parse(scheme.Columns[columnIndex++], row),
-					SpeedParser.Parse(scheme.Columns[columnIndex++], row)
+					DurationTimeParser.Parse(scheme.Columns[columnIndex++], row)
                 );
                 
                 list.Add(rowObj);
@@ -289,7 +289,7 @@ namespace Grooz.Editor
 			var DistanceMinParser = scheme.Columns[columnIndex++].Parser as global::DevDev.Table.Editor.TypeParser.Implements.LongParser;
 			var DistanceMaxParser = scheme.Columns[columnIndex++].Parser as global::DevDev.Table.Editor.TypeParser.Implements.LongParser;
 			var RepeatDistanceParser = scheme.Columns[columnIndex++].Parser as global::DevDev.Table.Editor.TypeParser.Implements.LongParser;
-			var RateParser = scheme.Columns[columnIndex++].Parser as global::DevDev.Table.Editor.TypeParser.Implements.FloatParser;
+			var RateParser = scheme.Columns[columnIndex++].Parser as global::DevDev.Table.Editor.TypeParser.Implements.LongParser;
 			var MaxSpwanParser = scheme.Columns[columnIndex++].Parser as global::DevDev.Table.Editor.TypeParser.Implements.LongParser;
 			var MonsterParser = scheme.Columns[columnIndex++].Parser as global::DevDev.Table.Editor.TypeParser.Implements.StringParser;
 			var ScoreParser = scheme.Columns[columnIndex++].Parser as global::DevDev.Table.Editor.TypeParser.Implements.LongParser;
@@ -297,7 +297,6 @@ namespace Grooz.Editor
 			var IncreaseHpScaleParser = scheme.Columns[columnIndex++].Parser as global::DevDev.Table.Editor.TypeParser.Implements.FloatParser;
 			var LoodParser = scheme.Columns[columnIndex++].Parser as global::DevDev.Table.Editor.TypeParser.Implements.StringParser;
 			var MoveKeyParser = scheme.Columns[columnIndex++].Parser as global::DevDev.Table.Editor.TypeParser.Implements.StringParser;
-			var PrefabsParser = scheme.Columns[columnIndex++].Parser as global::DevDev.Table.Editor.TypeParser.Implements.StringParser;
 
 
             for (int i = firstDataRowNum; i <= lastDataRowNum; i++)
@@ -321,8 +320,7 @@ namespace Grooz.Editor
 					IncreaseAtkScaleParser.Parse(scheme.Columns[columnIndex++], row),
 					IncreaseHpScaleParser.Parse(scheme.Columns[columnIndex++], row),
 					LoodParser.Parse(scheme.Columns[columnIndex++], row),
-					MoveKeyParser.Parse(scheme.Columns[columnIndex++], row),
-					PrefabsParser.Parse(scheme.Columns[columnIndex++], row)
+					MoveKeyParser.Parse(scheme.Columns[columnIndex++], row)
                 );
                 
                 list.Add(rowObj);

@@ -6,6 +6,6 @@ public class UiEntryStartButton : UiComponent
 {
     public void OnClick()
     {
-        SceneController.SceneChange(EScene.Main);
+        SceneController.SceneChange(EScene.Lobby);
     }
 }

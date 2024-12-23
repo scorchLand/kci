@@ -6,7 +6,6 @@ public enum EObjective
     NONE,
     TRUCK_CRASH,
     TRUCK_DISTANCE_UPDATE,
-    TUCK_FULE_DOWN,
 }
 public static class ObjectiveEvent<T>
 {
@@ -14,7 +13,6 @@ public static class ObjectiveEvent<T>
 
     public static event Action<EventData<T>> onTruckCrash;
     public static event Action<EventData<T>> onTruckDistanceUpdate;
-    public static event Action<EventData<T>> onTruckFuleDown;
 
     public static void AddObjectiveAction(EObjective type, Action<EventData<T>> action)
     {
@@ -25,9 +23,6 @@ public static class ObjectiveEvent<T>
                 break;
             case EObjective.TRUCK_DISTANCE_UPDATE:
                 onTruckDistanceUpdate += action;
-                break;
-            case EObjective.TUCK_FULE_DOWN:
-                onTruckFuleDown += action;
                 break;
         }
     }
@@ -41,9 +36,6 @@ public static class ObjectiveEvent<T>
             case EObjective.TRUCK_DISTANCE_UPDATE:
                 onTruckDistanceUpdate -= action;
                 break;
-            case EObjective.TUCK_FULE_DOWN:
-                onTruckFuleDown -= action;
-                break;
         }
     }
     public static void OnTruckCrash(EventData<T> data)
@@ -53,10 +45,6 @@ public static class ObjectiveEvent<T>
     public static void OnTruckDictanceUpdate(EventData<T> data)
     {
         onTruckDistanceUpdate?.Invoke(data);
-    }
-    public static void OnTruckFuleDown(EventData<T> data)
-    {
-        onTruckFuleDown?.Invoke(data);
     }
 }
 public class EventData<T>

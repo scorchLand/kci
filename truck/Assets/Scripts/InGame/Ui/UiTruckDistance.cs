@@ -6,6 +6,7 @@ using TMPro;
 public class UiTruckDistance : UiComponent
 {
     public TextMeshProUGUI tmpDistance;
+    public float distance;
     private void Awake()
     {
         ObjectiveEvent<float>.AddObjectiveAction(EObjective.TRUCK_DISTANCE_UPDATE, UpdateUi);
@@ -16,6 +17,7 @@ public class UiTruckDistance : UiComponent
     }
     private void UpdateUi(EventData<float> data)
     {
-        tmpDistance.text = $"{(long)InGameController.Instance.Distance}M";
+        distance += Time.deltaTime * data.data;
+        tmpDistance.text = $"{(long)distance}M";
     }
 }
