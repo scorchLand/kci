@@ -29,7 +29,7 @@ namespace Grooz
 		/// <summary>
 		/// 스폰 확률
 		/// </summary>
-		public global::System.Int64 Rate => _Rate;
+		public global::System.Single Rate => _Rate;
 
 		/// <summary>
 		/// 최대 스폰 횟수
@@ -67,12 +67,17 @@ namespace Grooz
 		/// </summary>
 		public global::System.String MoveKey => _MoveKey;
 
+		/// <summary>
+		/// 인게임 캐릭터 프리팹
+		/// </summary>
+		public global::System.String Prefabs => _Prefabs;
+
 
 		[SerializeAbleField(0)] private global::System.String _Key;
 		[SerializeAbleField(1)] private global::System.Int64 _DistanceMin;
 		[SerializeAbleField(2)] private global::System.Int64 _DistanceMax;
 		[SerializeAbleField(3)] private global::System.Int64 _RepeatDistance;
-		[SerializeAbleField(4)] private global::System.Int64 _Rate;
+		[SerializeAbleField(4)] private global::System.Single _Rate;
 		[SerializeAbleField(5)] private global::System.Int64 _MaxSpwan;
 		[SerializeAbleField(6)] private global::System.String _Monster;
 		[SerializeAbleField(7)] private global::System.Int64 _Score;
@@ -80,13 +85,14 @@ namespace Grooz
 		[SerializeAbleField(9)] private global::System.Single _IncreaseHpScale;
 		[SerializeAbleField(10)] private global::System.String _Lood;
 		[SerializeAbleField(11)] private global::System.String _MoveKey;
+		[SerializeAbleField(12)] private global::System.String _Prefabs;
 
 
         public int Index { get; set; }
         
         public RowSpwaner() {}
 
-        public RowSpwaner(global::System.String __Key, global::System.Int64 __DistanceMin, global::System.Int64 __DistanceMax, global::System.Int64 __RepeatDistance, global::System.Int64 __Rate, global::System.Int64 __MaxSpwan, global::System.String __Monster, global::System.Int64 __Score, global::System.Single __IncreaseAtkScale, global::System.Single __IncreaseHpScale, global::System.String __Lood, global::System.String __MoveKey)
+        public RowSpwaner(global::System.String __Key, global::System.Int64 __DistanceMin, global::System.Int64 __DistanceMax, global::System.Int64 __RepeatDistance, global::System.Single __Rate, global::System.Int64 __MaxSpwan, global::System.String __Monster, global::System.Int64 __Score, global::System.Single __IncreaseAtkScale, global::System.Single __IncreaseHpScale, global::System.String __Lood, global::System.String __MoveKey, global::System.String __Prefabs)
         {
 			_Key = __Key;
 			_DistanceMin = __DistanceMin;
@@ -100,6 +106,7 @@ namespace Grooz
 			_IncreaseHpScale = __IncreaseHpScale;
 			_Lood = __Lood;
 			_MoveKey = __MoveKey;
+			_Prefabs = __Prefabs;
 
         }
     }

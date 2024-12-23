@@ -94,6 +94,20 @@ namespace DevDev.Extensions
         //    }
         //
         //}
+        public static string[] StringToArray(this string value)
+        {
+            return value.Split(',');
+        }
+        public static float[] StringToFloatArray(this string value)
+        {
+            var stringArray = value.Split(',');
+            float[] result = new float[stringArray.Length];
+            for (int i = 0; i < stringArray.Length;i++)
+            {
+                result[i] = Convert.ToSingle(stringArray[i]);
+            }
+            return result;
+        }
 
         public static string WrapRichTextColor(this string value, Color color)
         {

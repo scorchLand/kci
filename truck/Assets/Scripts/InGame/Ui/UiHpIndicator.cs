@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
-public class UiTruckDistance : UiComponent
+public class UiHpIndicator : MonoBehaviour
 {
-    public TextMeshProUGUI tmpDistance;
+    public Slider hp;
     private void Awake()
     {
         ObjectiveEvent<float>.AddObjectiveAction(EObjective.TRUCK_DISTANCE_UPDATE, UpdateUi);
@@ -16,6 +17,6 @@ public class UiTruckDistance : UiComponent
     }
     private void UpdateUi(EventData<float> data)
     {
-        tmpDistance.text = $"{(long)InGameController.Instance.Distance}M";
+        hp.value = Truck.TestPlayer.CurrentHp / Truck.TestPlayer.MaxHp;
     }
 }
