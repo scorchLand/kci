@@ -1229,8 +1229,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 676042075683104161, guid: fc09169f11dc1c346925e9c960045be1, type: 3}
-      propertyPath: m_IsActive
+    - target: {fileID: 2708520784200677062, guid: fc09169f11dc1c346925e9c960045be1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2708520784200677062, guid: fc09169f11dc1c346925e9c960045be1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2708520784200677062, guid: fc09169f11dc1c346925e9c960045be1, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988067152161392808, guid: fc09169f11dc1c346925e9c960045be1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988067152161392808, guid: fc09169f11dc1c346925e9c960045be1, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6256154700154263546, guid: fc09169f11dc1c346925e9c960045be1, type: 3}
@@ -1312,10 +1328,6 @@ PrefabInstance:
     - target: {fileID: 6256154700154263546, guid: fc09169f11dc1c346925e9c960045be1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7730266817999514665, guid: fc09169f11dc1c346925e9c960045be1, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
