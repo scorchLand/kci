@@ -34,7 +34,10 @@ public class People : Unit
             isCollision = true;
         }
         if (isCollision)
+        {
+            physic.AddForce(-transform.position);
             return;
+        }
     }
     private IEnumerator RoutineRand()
     {
