@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class People : Unit
 {
+    public float speed = 5;
     private Rigidbody2D physic;
 
     private Vector3 TargetDistance;
@@ -14,6 +15,9 @@ public class People : Unit
     }
     private void Update()
     {
+        transform.Translate(-transform.position.normalized * Time.deltaTime * speed);
+        if (Vector3.Distance(transform.position, Vector3.zero) < 1)
+            Destroy(gameObject);
         if (physic.velocity != Vector2.zero)
             return;
         var targetPosition = TargetDistance * Time.deltaTime;
