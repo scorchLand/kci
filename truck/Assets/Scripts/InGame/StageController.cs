@@ -5,21 +5,24 @@ using UnityEngine;
 public class StageController : MonoBehaviour
 {
     public int StageNumber { get; private set; } = 0;
+    public IReadOnlyList<HeroTowerScore> ScoreList => _scoreList;
 
     public GameObject Hero;
     public GameObject enemy;
+    public GameObject Tower;
 
-    private float _currentTime = 0;
+    private List<HeroTowerScore> _scoreList = new List<HeroTowerScore>();
+
     private void Start()
     {
+        _scoreList.Add(new HeroTowerScore());
         StartCoroutine(RoutineRandomSpawn());
     }
     private void Update()
     {
-        _currentTime += Time.deltaTime;
-        if(_currentTime > 10)
+        if(StageSystem.Instance.CurrentTime > InGameController.Instance.stageSystem.maxTime)
         {
-            _currentTime = 0;
+            StageSystem.Instance.SetCurrentTime(0);
             StageNumber++;
         }
     }

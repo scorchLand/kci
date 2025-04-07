@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class UiMainCanvas : MonoBehaviour
 {
-    public UiResult uiResult;
+    public UiHeroInfo uiHeroInfo;
+    public UiHeroPointInfo uiHeroPointInfo;
 
-
+    public void Initialize()
+    {
+        uiHeroInfo.Initialize();
+        uiHeroPointInfo.Initialize();
+    }
 }

@@ -8,7 +8,7 @@ public class StageSystem : MonoBehaviour
 
     public float CurrentTime { get; private set; } = 0;
 
-    public float maxTime = 60;
+    public float maxTime = 10;
     public int currentStage = 0;
 
     public void Initialize()
@@ -26,5 +26,9 @@ public class StageSystem : MonoBehaviour
     private void Update()
     {
         CurrentTime += Time.deltaTime;
+    }
+    public void SetCurrentTime(float time)
+    {
+        CurrentTime = time;
     }
 }

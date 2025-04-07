@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Player : Unit
 {
+    public static Player Instance { get; private set; } 
     public float power = 5;
 
     private Rigidbody2D physic;
 
     private void Awake()
     {
+        Instance = this;
         physic = GetComponent<Rigidbody2D>();
     }
     void Start()
@@ -23,7 +25,7 @@ public class Player : Unit
     }
     private void FixedUpdate()
     {
-        Debug.Log(physic.velocity);
+        //Debug.Log(physic.velocity);
         bool isCollision = false;
         var force = InputController.InputDistance * power;
         if (!TestWallController.IsTestBoxCollision(transform.position + (new Vector3(physic.velocity.x, 0) * Time.fixedDeltaTime)))
@@ -40,11 +42,16 @@ public class Player : Unit
             return;
         if (InputController.IsMouseDown)
         {
-            Debug.Log($"{InputController.InputDistance}");
+            //Debug.Log($"{InputController.InputDistance}");
             //var targetVector = transform.position + (InputController.InputDistance * power * Time.deltaTime);
             //if (TestWallController.IsTestBoxCollision(targetVector))
             //    transform.position = targetVector;
             physic.AddForce(force);
         }
+    }
+    public void CreateTower()
+    {
+        var tower = Instantiate(InGameController.Instance.stageController.Tower);
+        tower.transform.position = transform.position;
     }
 }
