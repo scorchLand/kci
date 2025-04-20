@@ -6,6 +6,7 @@ using UnityEngine;
 public class InGameController : MonoBehaviour
 {
     public static InGameController Instance { get; private set; }
+    public CameraController cameraController;
     public StageSystem stageSystem;
     public StageController stageController;
     public UiMainCanvas mainCanvas;

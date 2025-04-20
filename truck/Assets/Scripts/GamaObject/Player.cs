@@ -16,7 +16,7 @@ public class Player : Unit
     }
     void Start()
     {
-
+        InGameController.Instance.cameraController.SetTrackingTarget(transform);
     }
 
     // Update is called once per frame

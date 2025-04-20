@@ -13,8 +13,14 @@ public class People : Unit
     public EPeopleState State { get; private set; }
     public float speed = 5;
     private Rigidbody2D physic;
-
-    private Vector3 TargetDistance;
+    public Vector3 TrackingPosition { get; private set; }
+    private Coroutine _routineAboid;
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        TrackingPosition = Quaternion.AngleAxis(150f, Vector3.forward) * collision.contacts[0].point - transform.position;
+        if (_routineAboid == null)
+            _routineAboid = StartCoroutine(Aboid(collision));
+    }
     private void Awake()
     {
         physic = GetComponent<Rigidbody2D>();
@@ -30,12 +36,12 @@ public class People : Unit
     {
         if (State == EPeopleState.Dead)
             return;
-        transform.Translate(-transform.position.normalized * Time.deltaTime * speed);
+        transform.Translate((TrackingPosition - transform.position).normalized * Time.deltaTime * speed);
         if (Vector3.Distance(transform.position, Vector3.zero) < 1)
             Destroy(gameObject);
         if (physic.velocity != Vector2.zero)
             return;
-        var targetPosition = TargetDistance * Time.deltaTime;
+        var targetPosition = TrackingPosition * Time.deltaTime;
         if (TestWallController.IsTestBoxCollision(targetPosition + transform.position))
             transform.position += targetPosition;
     }
@@ -69,8 +75,15 @@ public class People : Unit
     {
         while (true)
         {
-            TargetDistance = new Vector3(Random.Range(-5, 5f), Random.Range(-5, 5f)).normalized;
+            //TrackingPosition = new Vector3(Random.Range(-5, 5f), Random.Range(-5, 5f)).normalized * 15;
             yield return new WaitForSeconds(Random.Range(0, 5f));
         }
+    }
+    private IEnumerator Aboid(Collision2D collision)
+    {
+        yield return new WaitForSeconds(1f);
+        TrackingPosition = Vector3.zero;
+        yield return new WaitForSeconds(0.5f);
+        _routineAboid = null;
     }
 }

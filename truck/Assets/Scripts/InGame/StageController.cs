@@ -32,7 +32,7 @@ public class StageController : MonoBehaviour
         {
             yield return new WaitForSeconds(Random.Range(1f, 3f));
             var newEnemy = Instantiate(StageNumber % 2 ==0 ? Hero : enemy);
-            newEnemy.transform.position = (new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized * 15);
+            newEnemy.transform.position = (new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized * 30);
         }
     }
 }

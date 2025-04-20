@@ -4,39 +4,15 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-
-    private static GameObject _goCamera;
-    public static void Initialize(GameObject targetObject)
+    public Transform TrackingTarget { get; private set; }
+    public Vector3 TrackingPosition => TrackingTarget == null ? Vector3.zero : TrackingTarget.position;
+    public Vector3 offset = new Vector3(0,0, -10);
+    public void SetTrackingTarget(Transform target)
     {
-        _goCamera = targetObject;
-        _goCamera.AddComponent<CameraController>();
+        TrackingTarget = target;
     }
-    public static void Dispose()
+    private void Update()
     {
-        Destroy(_goCamera);
-    }
-
-    public static void CameraShake()
-    {
-
-    }
-
-    public Vector3 StaticPosition { get; private set; }
-
-    private Coroutine _currentProcess;
-
-    private void Start()
-    {
-        StaticPosition = transform.position;
-    }
-
-    private void ResetPosition()
-    {
-        transform.position = StaticPosition;
-    }
-
-    private IEnumerator RoutineCameraShake()
-    {
-        yield break;
+        transform.position = TrackingPosition + offset;
     }
 }
