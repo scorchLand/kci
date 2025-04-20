@@ -45,7 +45,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6874338327475955887}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
   m_Name: 
@@ -76,7 +76,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4644d06082893754ab247a10d12adc01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCanvas: {fileID: 0}
   prefab: {fileID: 6918651390226167581}
 --- !u!1001 &5798419026627531612
 PrefabInstance:
@@ -96,11 +95,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2106096368692433474, guid: 17707368251ef714d8b17b5b946bacd3, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2106096368692433474, guid: 17707368251ef714d8b17b5b946bacd3, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2106096368692433474, guid: 17707368251ef714d8b17b5b946bacd3, type: 3}
       propertyPath: m_AnchorMin.x
@@ -112,11 +111,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2106096368692433474, guid: 17707368251ef714d8b17b5b946bacd3, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2106096368692433474, guid: 17707368251ef714d8b17b5b946bacd3, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2106096368692433474, guid: 17707368251ef714d8b17b5b946bacd3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -166,12 +165,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2838542208363752790, guid: 17707368251ef714d8b17b5b946bacd3, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2838542208363752790, guid: 17707368251ef714d8b17b5b946bacd3, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493636256350430273, guid: 17707368251ef714d8b17b5b946bacd3, type: 3}
+      propertyPath: tmpCount
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5533883897146732888, guid: 17707368251ef714d8b17b5b946bacd3, type: 3}
       propertyPath: m_Name
       value: HeroPointInfoCell
       objectReference: {fileID: 0}
+    - target: {fileID: 8835207389489566452, guid: 17707368251ef714d8b17b5b946bacd3, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8835207389489566452, guid: 17707368251ef714d8b17b5b946bacd3, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8835207389489566452, guid: 17707368251ef714d8b17b5b946bacd3, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5820414438094624926, guid: 17707368251ef714d8b17b5b946bacd3, type: 3}
+    - {fileID: 4275657730818942929, guid: 17707368251ef714d8b17b5b946bacd3, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17707368251ef714d8b17b5b946bacd3, type: 3}

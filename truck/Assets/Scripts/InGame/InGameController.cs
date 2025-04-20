@@ -16,6 +16,8 @@ public class InGameController : MonoBehaviour
     {
         Tables.LoadFromResources();
         Instance = this;
+
+        mainCanvas.Initialize();
     }
     private void OnDestroy()
     {

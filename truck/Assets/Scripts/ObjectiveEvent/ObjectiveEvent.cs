@@ -4,44 +4,56 @@ using UnityEngine;
 public enum EObjective
 {
     NONE,
+    PEAPLE_HIT
 }
 public static class ObjectiveEvent<T>
 {
     //public static bool IsLogging { get; } = false;
 
+    public static event Action<EventData<T>> onPeapleHit;
     //public static event Action<EventData<T>> onTruckCrash;
     //public static event Action<EventData<T>> onTruckDistanceUpdate;
     //public static event Action<EventData<T>> onTruckFuleDown;
 
     public static void AddObjectiveAction(EObjective type, Action<EventData<T>> action)
     {
-        //switch (type)
-        //{
-        //    case EObjective.TRUCK_CRASH:
-        //        onTruckCrash += action;
-        //        break;
-        //    case EObjective.TRUCK_DISTANCE_UPDATE:
-        //        onTruckDistanceUpdate += action;
-        //        break;
-        //    case EObjective.TUCK_FULE_DOWN:
-        //        onTruckFuleDown += action;
-        //        break;
-        //}
+        switch (type)
+        {
+            case EObjective.PEAPLE_HIT:
+                onPeapleHit += action;
+                break;
+            //case EObjective.TRUCK_CRASH:
+            //    onTruckCrash += action;
+            //    break;
+            //case EObjective.TRUCK_DISTANCE_UPDATE:
+            //    onTruckDistanceUpdate += action;
+            //    break;
+            //case EObjective.TUCK_FULE_DOWN:
+            //    onTruckFuleDown += action;
+            //    break;
+        }
     }
     public static void RemoveObjectiveAction(EObjective type, Action<EventData<T>> action)
     {
-        //switch (type)
-        //{
-        //    case EObjective.TRUCK_CRASH:
-        //        onTruckCrash -= action;
-        //        break;
-        //    case EObjective.TRUCK_DISTANCE_UPDATE:
-        //        onTruckDistanceUpdate -= action;
-        //        break;
-        //    case EObjective.TUCK_FULE_DOWN:
-        //        onTruckFuleDown -= action;
-        //        break;
-        //}
+        switch (type)
+        {
+            case EObjective.PEAPLE_HIT:
+                onPeapleHit -= action;
+                break;
+                //    case EObjective.TRUCK_CRASH:
+                //        onTruckCrash -= action;
+                //        break;
+                //    case EObjective.TRUCK_DISTANCE_UPDATE:
+                //        onTruckDistanceUpdate -= action;
+                //        break;
+                //    case EObjective.TUCK_FULE_DOWN:
+                //        onTruckFuleDown -= action;
+                //        break;
+        }
+    }
+    public static void OnPeopleHit(EventData<T> data)
+    {
+        onPeapleHit?.Invoke(data);
     }
     //public static void OnTruckCrash(EventData<T> data)
     //{

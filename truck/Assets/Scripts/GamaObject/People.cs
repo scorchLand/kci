@@ -69,6 +69,7 @@ public class People : Unit
         State = EPeopleState.Dead;
         yield return new WaitForSeconds(0.5f);
         InGameController.Instance.stageController.ScoreList[0].AddValue(0.1f);
+        ObjectiveEvent<string>.OnPeopleHit(new EventData<string>());
         Destroy(gameObject);
     }
     private IEnumerator RoutineRand()
