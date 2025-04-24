@@ -113,6 +113,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d260685f4f25184ebda57f1e98ab131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: -956846036156694986, guid: b554ba63e83bf144db9470a30badd339, type: 3}
+  cooldown: 1
+  damage: 1
+  bulletSpeed: 3
+  site: 5
 --- !u!1 &7112887775521255962
 GameObject:
   m_ObjectHideFlags: 0

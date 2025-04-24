@@ -1,54 +1,43 @@
 using System;
+using System.Collections.Generic;
 using System.Numerics;
 using UnityEngine;
-public enum EObjective
-{
-    NONE,
-    PEAPLE_HIT
-}
 public static class ObjectiveEvent<T>
 {
     //public static bool IsLogging { get; } = false;
-
     public static event Action<EventData<T>> onPeapleHit;
     //public static event Action<EventData<T>> onTruckCrash;
     //public static event Action<EventData<T>> onTruckDistanceUpdate;
     //public static event Action<EventData<T>> onTruckFuleDown;
+    private static Dictionary<string, List<Action<EventData<T>>>> _list = new Dictionary<string, List<Action<EventData<T>>>>();
 
-    public static void AddObjectiveAction(EObjective type, Action<EventData<T>> action)
+    public static void AddEvent(string key, Action<EventData<T>> action)
     {
-        switch (type)
+        if (!_list.ContainsKey(key))
         {
-            case EObjective.PEAPLE_HIT:
-                onPeapleHit += action;
-                break;
-            //case EObjective.TRUCK_CRASH:
-            //    onTruckCrash += action;
-            //    break;
-            //case EObjective.TRUCK_DISTANCE_UPDATE:
-            //    onTruckDistanceUpdate += action;
-            //    break;
-            //case EObjective.TUCK_FULE_DOWN:
-            //    onTruckFuleDown += action;
-            //    break;
+            _list.Add(key, new List<Action<EventData<T>>>());
         }
+        _list[key].Add(action);
     }
-    public static void RemoveObjectiveAction(EObjective type, Action<EventData<T>> action)
+    public static void RemoveEvent(string key, Action<EventData<T>> action)
     {
-        switch (type)
+        if (!_list.ContainsKey(key))
         {
-            case EObjective.PEAPLE_HIT:
-                onPeapleHit -= action;
-                break;
-                //    case EObjective.TRUCK_CRASH:
-                //        onTruckCrash -= action;
-                //        break;
-                //    case EObjective.TRUCK_DISTANCE_UPDATE:
-                //        onTruckDistanceUpdate -= action;
-                //        break;
-                //    case EObjective.TUCK_FULE_DOWN:
-                //        onTruckFuleDown -= action;
-                //        break;
+            return;
+        }
+        _list[key].Remove(action);
+        if (_list[key].Count == 0)
+            _list.Remove(key);
+    }
+    public static void OnEvent(string key, EventData<T> data = null)
+    {
+        if (!_list.ContainsKey(key))
+        {
+            return;
+        }
+        foreach(var action in _list[key])
+        {
+            action?.Invoke(data);
         }
     }
     public static void OnPeopleHit(EventData<T> data)

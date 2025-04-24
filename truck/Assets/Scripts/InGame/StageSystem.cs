@@ -4,28 +4,28 @@ using UnityEngine;
 
 public class StageSystem : MonoBehaviour
 {
-    public static StageSystem Instance { get; private set; }
 
     public float CurrentTime { get; private set; } = 0;
+    public float Fuel { get; private set; }
 
     public float maxTime = 10;
     public int currentStage = 0;
+    public float maxFuel = 30;
 
     public void Initialize()
     {
-        if (Instance == null)
-            return;
-    }
-
-    private void Awake()
-    {
-        if(Instance == null)
-            Instance = this;
+        Fuel = maxFuel;
     }
 
     private void Update()
     {
-        CurrentTime += Time.deltaTime;
+        float deltaTime = Time.deltaTime;
+        CurrentTime += deltaTime;
+        if (Fuel <= 0)
+            return;
+        var consum = InputController.InputDistance.magnitude;
+        Fuel -= consum * deltaTime;
+        ObjectiveEvent<float>.OnEvent("OnFuelUpdate", new EventData<float>(Fuel));
     }
     public void SetCurrentTime(float time)
     {

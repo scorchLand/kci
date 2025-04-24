@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : Unit
 {
+    public float hp = 1;
     public float speed = 5;
     public Vector3 TrackingPosition { get; private set; }
     private Coroutine _routineAboid;
@@ -24,6 +25,20 @@ public class Enemy : Unit
         transform.Translate(TrackingPosition - transform.position.normalized * Time.deltaTime * speed);
         if(Vector3.Distance(transform.position, TrackingPosition) < 1)
             Destroy(gameObject);
+    }
+    public void OnDamage(float damage)
+    {
+        hp -= damage;
+        if(hp <= 0)
+        {
+            hp = 0;
+            Dead();
+        }
+
+    }
+    private void Dead()
+    {
+        Destroy(gameObject);
     }
     private IEnumerator Aboid(Collision2D collision)
     {

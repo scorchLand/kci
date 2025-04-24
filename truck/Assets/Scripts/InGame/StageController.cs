@@ -7,9 +7,9 @@ public class StageController : MonoBehaviour
     public int StageNumber { get; private set; } = 0;
     public IReadOnlyList<HeroTowerScore> ScoreList => _scoreList;
 
-    public GameObject Hero;
-    public GameObject enemy;
-    public GameObject Tower;
+    public Unit Hero;
+    public Unit enemy;
+    public Unit Tower;
 
     private List<HeroTowerScore> _scoreList = new List<HeroTowerScore>();
 
@@ -20,9 +20,9 @@ public class StageController : MonoBehaviour
     }
     private void Update()
     {
-        if(StageSystem.Instance.CurrentTime > InGameController.Instance.stageSystem.maxTime)
+        if(InGameController.Instance.stageSystem.CurrentTime > InGameController.Instance.stageSystem.maxTime)
         {
-            StageSystem.Instance.SetCurrentTime(0);
+            InGameController.Instance.stageSystem.SetCurrentTime(0);
             StageNumber++;
         }
     }
@@ -31,7 +31,9 @@ public class StageController : MonoBehaviour
         while(true)
         {
             yield return new WaitForSeconds(Random.Range(1f, 3f));
-            var newEnemy = Instantiate(StageNumber % 2 ==0 ? Hero : enemy);
+            bool isTeam = StageNumber % 2 == 0;
+            var newEnemy = Instantiate(isTeam ? Hero : enemy);
+            newEnemy.SetTeam(isTeam ? ETeam.Third : ETeam.Second);
             newEnemy.transform.position = (new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized * 30);
         }
     }
