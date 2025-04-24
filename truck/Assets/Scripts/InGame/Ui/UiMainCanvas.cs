@@ -9,7 +9,7 @@ public class UiMainCanvas : MonoBehaviour
 
     public void Initialize()
     {
-        uiHeroInfo.Initialize();
-        uiHeroPointInfo.Initialize();
+        //uiHeroInfo.Initialize();
+        //uiHeroPointInfo.Initialize();
     }
 }
