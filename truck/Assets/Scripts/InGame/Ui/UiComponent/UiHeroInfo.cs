@@ -13,6 +13,7 @@ public class UiHeroInfo : UiComponent
     public void UpdateUi()
     {
         var towerCount = InGameController.Instance.stageController.ScoreList[0].Count;
+        Debug.Log($"{towerCount}");
         if (towerCount > _list.Count)
         {
             for (int i = 0; i < towerCount - _list.Count; i++)

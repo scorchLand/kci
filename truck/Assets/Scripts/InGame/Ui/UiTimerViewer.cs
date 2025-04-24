@@ -19,9 +19,9 @@ public class UiTimerViewer : UiComponent
     }
     public void Update()
     {
-        float currentTime = StageSystem.Instance.maxTime - StageSystem.Instance.CurrentTime;
+        float currentTime = InGameController.Instance.stageSystem.maxTime - InGameController.Instance.stageSystem.CurrentTime;
         textMeshProUGUI.text = $"{TimeSpan.FromSeconds(currentTime).ToMMSS()}";
 
-        slider.value = (currentTime) / StageSystem.Instance.maxTime;
+        slider.value = (currentTime) / InGameController.Instance.stageSystem.maxTime;
     }
 }
