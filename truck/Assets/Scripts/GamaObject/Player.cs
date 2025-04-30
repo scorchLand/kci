@@ -49,9 +49,9 @@ public class Player : Unit
             physic.AddForce(force);
         }
     }
-    public void CreateTower()
+    public Unit CreateTower()
     {
         var tower = Instantiate(InGameController.Instance.stageController.Tower);
-        tower.transform.position = transform.position;
+        return tower;
     }
 }

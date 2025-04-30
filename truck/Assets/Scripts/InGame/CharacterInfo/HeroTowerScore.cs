@@ -20,12 +20,15 @@ public class HeroTowerScore
             Value -= 1;
         }
     }
-    public void CreateTower()
+    public bool TryCreateTower(out Unit unit)
     {
         if (Count > 0)
         {
             Count--;
-            Player.Instance.CreateTower();
+            unit = Player.Instance.CreateTower();
+            return true;
         }
+        unit = null;
+        return false;
     }
 }

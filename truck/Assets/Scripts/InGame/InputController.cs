@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class InputController : MonoBehaviour
 {
-    public static Vector3 InputDistance => IsMouseDown ? GetDragValue (InputMouseDrag): Vector3.zero;
+    public static Vector3 InputDistance => IsMouseDown && !IsUiMode ? GetDragValue (InputMouseDrag): Vector3.zero;
     public static Vector3 InputMouseDrag => Input.mousePosition - InputMouseDown;
 
     public static bool IsMouseDown { get; private set; } = false;
+    public static bool IsUiMode { get; private set; } = false;
 
     private static Vector3 InputMouseDown;
 
@@ -34,5 +35,9 @@ public class InputController : MonoBehaviour
             IsMouseDown = false;
         }
         
+    }
+    public static void SetUiMode(bool on)
+    {
+        IsUiMode = on;
     }
 }
