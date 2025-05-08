@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Player : Unit
 {
-    public static Player Instance { get; private set; } 
+    public static Player Instance { get; private set; }
+    public Transform pivot;
     public float power = 5;
 
     private Rigidbody2D physic;
@@ -42,11 +43,21 @@ public class Player : Unit
             return;
         if (InputController.IsMouseDown)
         {
+            if (InputController.InputDistance == Vector3.zero)
+                return;
             //Debug.Log($"{InputController.InputDistance}");
             //var targetVector = transform.position + (InputController.InputDistance * power * Time.deltaTime);
             //if (TestWallController.IsTestBoxCollision(targetVector))
             //    transform.position = targetVector;
             physic.AddForce(force);
+            if (force.x < 0)
+            {
+                pivot.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+            }
+            else
+            {
+                pivot.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+            }
         }
     }
     public Unit CreateTower()
