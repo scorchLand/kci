@@ -154,7 +154,7 @@ GameObject:
   - component: {fileID: 2140255996436209426}
   - component: {fileID: 7450597350480691468}
   m_Layer: 0
-  m_Name: wheel_b (1)
+  m_Name: wheel_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -274,7 +274,7 @@ GameObject:
   - component: {fileID: 4127325786307126882}
   - component: {fileID: 2676393660143969288}
   m_Layer: 0
-  m_Name: wheel
+  m_Name: wheel_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -496,7 +496,7 @@ GameObject:
   - component: {fileID: 8587440928826135977}
   - component: {fileID: 445347798278225120}
   m_Layer: 0
-  m_Name: wheel_b
+  m_Name: wheel_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -580,7 +580,7 @@ GameObject:
   - component: {fileID: 5529384255570865331}
   - component: {fileID: 2349818567699706094}
   m_Layer: 0
-  m_Name: wheel (1)
+  m_Name: wheel_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
