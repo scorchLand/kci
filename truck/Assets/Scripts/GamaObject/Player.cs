@@ -49,7 +49,7 @@ public class Player : Unit
             //var targetVector = transform.position + (InputController.InputDistance * power * Time.deltaTime);
             //if (TestWallController.IsTestBoxCollision(targetVector))
             //    transform.position = targetVector;
-            physic.AddForce(force);
+            physic.velocity = (force * 0.2f);
             if (force.x < 0)
             {
                 pivot.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
