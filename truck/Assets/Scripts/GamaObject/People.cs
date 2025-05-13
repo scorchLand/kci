@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Spine.Skeleton;
 
 public enum EPeopleState
 {
@@ -19,7 +20,9 @@ public class People : Unit
     {
         TrackingPosition = Quaternion.AngleAxis(150f, Vector3.forward) * collision.contacts[0].point - transform.position;
         if (_routineAboid == null)
+        {
             _routineAboid = StartCoroutine(Aboid(collision));
+        }
     }
     private void Awake()
     {
@@ -29,7 +32,7 @@ public class People : Unit
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
-            StartCoroutine(RoutineOnEnterCollision());
+            StartCoroutine(RoutineOnEnterCollision(collision));
 
     }
     private void Update()
@@ -64,8 +67,9 @@ public class People : Unit
             return;
         }
     }
-    private IEnumerator RoutineOnEnterCollision()
+    private IEnumerator RoutineOnEnterCollision(Collision2D collision)
     {
+        physic.AddForce(collision.gameObject.GetComponent<Player>().power * (collision.transform.position - transform.position) * 10);
         State = EPeopleState.Dead;
         yield return new WaitForSeconds(0.5f);
         InGameController.Instance.stageController.ScoreList[0].AddValue(0.1f);

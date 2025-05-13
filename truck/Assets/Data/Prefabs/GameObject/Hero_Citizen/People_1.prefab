@@ -109,6 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d8182fea447a1146a84ea939f7c1212, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
 --- !u!1 &7409174390698923928
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,6 +119,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6417536881525445375}
+  - component: {fileID: 8998725116248674033}
   m_Layer: 0
   m_Name: pv
   m_TagString: Untagged
@@ -141,6 +143,18 @@ Transform:
   - {fileID: 4371443735071242905}
   m_Father: {fileID: 6837052002373343508}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!210 &8998725116248674033
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7409174390698923928}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &8190227087360942532
 GameObject:
   m_ObjectHideFlags: 0

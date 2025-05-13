@@ -29,27 +29,25 @@ public class Player : Unit
         //Debug.Log(physic.velocity);
         bool isCollision = false;
         var force = InputController.InputDistance * power;
-        if (!TestWallController.IsTestBoxCollision(transform.position + (new Vector3(physic.velocity.x, 0) * Time.fixedDeltaTime)))
+        if (!TestWallController.IsTestBoxCollision(transform.position + (force * Time.fixedDeltaTime)))
         {
-            physic.velocity = new Vector2(-physic.velocity.x, physic.velocity.y);
             isCollision = true;
         }
-        if (!TestWallController.IsTestBoxCollision(transform.position + (new Vector3(0, physic.velocity.y) * Time.fixedDeltaTime)))
+        if (!TestWallController.IsTestBoxCollision(transform.position + (force * Time.fixedDeltaTime)))
         {
-            physic.velocity = new Vector2(physic.velocity.x, -physic.velocity.y);
             isCollision = true;
         }
         if (isCollision)
             return;
+
         if (InputController.IsMouseDown)
         {
+
             if (InputController.InputDistance == Vector3.zero)
                 return;
-            //Debug.Log($"{InputController.InputDistance}");
-            //var targetVector = transform.position + (InputController.InputDistance * power * Time.deltaTime);
-            //if (TestWallController.IsTestBoxCollision(targetVector))
-            //    transform.position = targetVector;
-            physic.velocity = (force * 0.2f);
+
+            transform.Translate(force * Time.fixedDeltaTime);
+
             if (force.x < 0)
             {
                 pivot.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
