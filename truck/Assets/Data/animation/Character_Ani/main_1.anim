@@ -38,7 +38,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: wheel_1
+    path: truck/wheel_1
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -63,7 +63,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: wheel_4
+    path: truck/wheel_2
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -88,7 +88,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: wheel_3
+    path: truck/wheel_3
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -113,7 +113,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: wheel_2
+    path: truck/wheel_4
   m_PositionCurves:
   - curve:
       serializedVersion: 2
@@ -148,7 +148,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: RT
+    path: truck
   m_ScaleCurves: []
   m_FloatCurves: []
   m_PPtrCurves: []
@@ -160,7 +160,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 2773661892
+      path: 3452760842
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -169,7 +169,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 538849285
+      path: 1275039425
       attribute: 4
       script: {fileID: 0}
       typeID: 4
@@ -178,7 +178,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1349829770
+      path: 3539394427
       attribute: 4
       script: {fileID: 0}
       typeID: 4
@@ -187,7 +187,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3457175849
+      path: 2784096237
       attribute: 4
       script: {fileID: 0}
       typeID: 4
@@ -196,7 +196,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3105317311
+      path: 999651918
       attribute: 4
       script: {fileID: 0}
       typeID: 4
@@ -261,7 +261,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: RT
+    path: truck
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -300,7 +300,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: RT
+    path: truck
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -339,7 +339,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: RT
+    path: truck
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -369,10 +369,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: wheel_1
+    path: truck/wheel_1
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -399,10 +399,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: wheel_1
+    path: truck/wheel_1
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -429,10 +429,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: wheel_1
+    path: truck/wheel_1
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -459,10 +459,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: wheel_4
+    path: truck/wheel_2
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -489,10 +489,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: wheel_4
+    path: truck/wheel_2
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -519,10 +519,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: wheel_4
+    path: truck/wheel_2
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -549,10 +549,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: wheel_3
+    path: truck/wheel_3
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -579,10 +579,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: wheel_3
+    path: truck/wheel_3
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -609,10 +609,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: wheel_3
+    path: truck/wheel_3
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -639,10 +639,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: wheel_2
+    path: truck/wheel_4
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -669,10 +669,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: wheel_2
+    path: truck/wheel_4
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -699,10 +699,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: wheel_2
+    path: truck/wheel_4
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   m_EulerEditorCurves:
   - serializedVersion: 2
     curve:
@@ -712,7 +712,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: wheel_1
+    path: truck/wheel_3
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -724,7 +724,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: wheel_1
+    path: truck/wheel_3
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -736,7 +736,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: wheel_1
+    path: truck/wheel_3
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -748,7 +748,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: wheel_3
+    path: truck/wheel_2
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -760,7 +760,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: wheel_3
+    path: truck/wheel_2
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -772,7 +772,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: wheel_3
+    path: truck/wheel_2
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -784,7 +784,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: wheel_2
+    path: truck/wheel_1
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -796,7 +796,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: wheel_2
+    path: truck/wheel_1
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -808,7 +808,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: wheel_2
+    path: truck/wheel_1
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -820,7 +820,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: wheel_4
+    path: truck/wheel_4
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -832,7 +832,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: wheel_4
+    path: truck/wheel_4
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -844,7 +844,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: wheel_4
+    path: truck/wheel_4
     classID: 4
     script: {fileID: 0}
     flags: 0
