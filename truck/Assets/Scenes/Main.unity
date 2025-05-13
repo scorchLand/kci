@@ -1223,6 +1223,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 785343278276915985, guid: fc09169f11dc1c346925e9c960045be1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.8303223
+      objectReference: {fileID: 0}
     - target: {fileID: 1291417298607632015, guid: fc09169f11dc1c346925e9c960045be1, type: 3}
       propertyPath: m_Name
       value: HeroInfoCell
