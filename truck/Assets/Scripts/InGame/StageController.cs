@@ -16,6 +16,7 @@ public class StageController : MonoBehaviour
     private void Start()
     {
         _scoreList.Add(new HeroTowerScore());
+        _scoreList[0].AddValue(2);
         StartCoroutine(RoutineRandomSpawn());
     }
     private void Update()

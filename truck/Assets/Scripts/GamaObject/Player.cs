@@ -7,22 +7,26 @@ public class Player : Unit
     public static Player Instance { get; private set; }
     public Transform pivot;
     public float power = 5;
+    public Animation anim;
 
-    private Rigidbody2D physic;
+    private Rigidbody2D _physic;
+    private bool _isMove = false;
 
     private void Awake()
     {
         Instance = this;
-        physic = GetComponent<Rigidbody2D>();
+        _physic = GetComponent<Rigidbody2D>();
     }
     void Start()
     {
         InGameController.Instance.cameraController.SetTrackingTarget(transform);
+        SetMoveState(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        SetMoveState(InputController.InputDistance != Vector3.zero);
     }
     private void FixedUpdate()
     {
@@ -62,5 +66,13 @@ public class Player : Unit
     {
         var tower = Instantiate(InGameController.Instance.stageController.Tower);
         return tower;
+    }
+    private void SetMoveState(bool on)
+    {
+        if (on == _isMove)
+            return;
+        _isMove = on;
+        anim.clip = anim.GetClip(_isMove ? "main_1" : "main_1_idle");
+        anim.Play();
     }
 }

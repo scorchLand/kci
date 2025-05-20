@@ -1562,15 +1562,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5136494749166227446, guid: fc09169f11dc1c346925e9c960045be1, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5136494749166227446, guid: fc09169f11dc1c346925e9c960045be1, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5136494749166227446, guid: fc09169f11dc1c346925e9c960045be1, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5860844631745707544, guid: fc09169f11dc1c346925e9c960045be1, type: 3}
       propertyPath: m_AnchoredPosition.x

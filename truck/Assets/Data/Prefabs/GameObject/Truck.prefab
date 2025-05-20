@@ -81,6 +81,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pivot: {fileID: 1508429235292137411}
   power: 10
+  anim: {fileID: 3445117177557872132}
 --- !u!50 &613742527093393305
 Rigidbody2D:
   serializedVersion: 4
@@ -356,8 +357,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5744108221291922082}
-  - component: {fileID: 8927466833843337953}
   - component: {fileID: 4688306617552300514}
+  - component: {fileID: 3445117177557872132}
   m_Layer: 0
   m_Name: pv
   m_TagString: Untagged
@@ -381,27 +382,6 @@ Transform:
   - {fileID: 5332977254204091727}
   m_Father: {fileID: 1508429235292137411}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &8927466833843337953
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7237216506166119946}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 314928e75dfd9cf4d9fef4535f13ad6f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!210 &4688306617552300514
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -414,6 +394,23 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortAtRoot: 0
+--- !u!111 &3445117177557872132
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7237216506166119946}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: d0a9d48346b06de48922c0f30e1b471f, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: d0a9d48346b06de48922c0f30e1b471f, type: 2}
+  - {fileID: 7400000, guid: 728a5e3b660431b4b864dae3d93fa901, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &7624042411940315431
 GameObject:
   m_ObjectHideFlags: 0
