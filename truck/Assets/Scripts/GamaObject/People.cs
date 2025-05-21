@@ -69,7 +69,7 @@ public class People : Unit
     }
     private IEnumerator RoutineOnEnterCollision(Collision2D collision)
     {
-        physic.AddForce(collision.gameObject.GetComponent<Player>().power * (collision.transform.position - transform.position) * 10);
+        physic.AddForce(collision.gameObject.GetComponent<Player>().power * (transform.position - collision.transform.position) * 10);
         State = EPeopleState.Dead;
         yield return new WaitForSeconds(0.5f);
         InGameController.Instance.stageController.ScoreList[0].AddValue(0.1f);

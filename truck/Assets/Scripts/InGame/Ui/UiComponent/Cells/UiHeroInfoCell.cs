@@ -21,7 +21,9 @@ public class UiHeroInfoCell : UiComponent, IPointerDownHandler
             return;
         if(_goObject != null)
         {
-            _goObject.transform.position = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            var targetPosition = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            targetPosition = new Vector2 (Mathf.Floor(targetPosition.x), Mathf.Floor(targetPosition.y));
+            _goObject.transform.position = targetPosition;
         }
         if(Input.GetMouseButtonUp(0))
         {
