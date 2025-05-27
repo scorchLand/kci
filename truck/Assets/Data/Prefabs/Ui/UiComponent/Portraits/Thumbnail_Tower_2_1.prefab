@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 1427269031548519534}
   - component: {fileID: 7245706606111661934}
   m_Layer: 5
-  m_Name: Thumbnail_Tower_3x2
+  m_Name: Thumbnail_Tower_2_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
