@@ -17,6 +17,10 @@ public class UiPlayerProfile : MonoBehaviour
     }
     private void OnFuelUpdate(EventData<float> data )
     {
-        fuelValue.value = data.data / InGameController.Instance.stageSystem.maxFuel;
+        //fuelValue.value = data.data / InGameController.Instance.stageSystem.maxFuel;
+
+        float currentTime = InGameController.Instance.stageSystem.maxTime - InGameController.Instance.stageSystem.CurrentTime;
+
+        fuelValue.value = (currentTime) / InGameController.Instance.stageSystem.maxTime;
     }
 }

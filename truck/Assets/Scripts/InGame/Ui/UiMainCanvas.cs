@@ -11,6 +11,7 @@ public class UiMainCanvas : MonoBehaviour
 
     public void Initialize()
     {
+        UiDepthManager.SetRoot(transform);
         uiHeroInfo.Initialize();
         uiHeroPointInfo.Initialize();
     }

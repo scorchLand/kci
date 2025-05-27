@@ -25,6 +25,9 @@ public class StageController : MonoBehaviour
         {
             InGameController.Instance.stageSystem.SetCurrentTime(0);
             StageNumber++;
+            var ui = UiDepthManager.ShowPopup("UiLoadingWave").GetComponent<UiSwapModeProduction>();
+            ui.SetMode(StageNumber % 2 == 0 ? 0 :1);
+            ui.SetLifeTime(2);
         }
     }
     private IEnumerator RoutineRandomSpawn()
