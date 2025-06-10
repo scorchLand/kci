@@ -12,6 +12,8 @@ public class InGameController : MonoBehaviour
     public UiMainCanvas mainCanvas;
     public float Distance { get; private set; }
 
+    public GameObject[] TowerArray;
+
     private void Awake()
     {
         Tables.LoadFromResources();
