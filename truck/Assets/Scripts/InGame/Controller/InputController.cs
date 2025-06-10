@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputController : MonoBehaviour
+public class InputController
 {
     public static Vector3 InputDistance => IsMouseDown && !IsUiMode ? GetDragValue (InputMouseDrag): Vector3.zero;
     public static Vector3 InputMouseDrag => Input.mousePosition - InputMouseDown;
@@ -23,7 +23,7 @@ public class InputController : MonoBehaviour
         }
     }
 
-    private void Update()
+    public void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {

@@ -507,7 +507,6 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
-  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -589,19 +588,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &963194229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18afaff6094be734fbb63db653002317, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  offset: {x: 0, y: 0, z: -10}
 --- !u!1 &1001116574
 GameObject:
   m_ObjectHideFlags: 0
@@ -1100,7 +1086,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1849897959}
   - component: {fileID: 1849897958}
-  - component: {fileID: 1849897960}
   - component: {fileID: 1849897961}
   - component: {fileID: 1849897962}
   m_Layer: 0
@@ -1122,10 +1107,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 923f3f56571603544a579d823079d735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraController: {fileID: 963194229}
   stageSystem: {fileID: 1849897962}
   stageController: {fileID: 78943789}
   mainCanvas: {fileID: 839864242}
+  TowerArray: []
 --- !u!4 &1849897959
 Transform:
   m_ObjectHideFlags: 0
@@ -1141,18 +1126,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1849897960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1849897957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16ce19d7b7895c4498c0098ba6cf2f52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1849897961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1181,6 +1154,50 @@ MonoBehaviour:
   maxTime: 30
   currentStage: 0
   maxFuel: 30
+--- !u!1 &1970716061
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1970716062}
+  - component: {fileID: 1970716063}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1970716062
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970716061}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1970716063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970716061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8d6dbf2faaf7304a9583c1e09ffb4f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &627350167443545530
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1562,15 +1579,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5136494749166227446, guid: fc09169f11dc1c346925e9c960045be1, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5136494749166227446, guid: fc09169f11dc1c346925e9c960045be1, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5136494749166227446, guid: fc09169f11dc1c346925e9c960045be1, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5860844631745707544, guid: fc09169f11dc1c346925e9c960045be1, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1725,3 +1742,4 @@ SceneRoots:
   - {fileID: 4682003361462967484}
   - {fileID: 862634273}
   - {fileID: 78943788}
+  - {fileID: 1970716062}
