@@ -11,30 +11,30 @@ namespace Grooz
 {
     public static class Tables
     {
-		public static TableCharacter Character { get; } = new TableCharacter();
-		public static TableCharacterSpecial CharacterSpecial { get; } = new TableCharacterSpecial();
-		public static TableMove Move { get; } = new TableMove();
-		public static TableSkill Skill { get; } = new TableSkill();
-		public static TableSpwaner Spwaner { get; } = new TableSpwaner();
+		public static TableHero Hero { get; } = new TableHero();
+		public static TableHeroTower HeroTower { get; } = new TableHeroTower();
+		public static TableStatus Status { get; } = new TableStatus();
+		public static TableStat Stat { get; } = new TableStat();
+		public static TableWave Wave { get; } = new TableWave();
 
         
         public static void LoadFromPath(string path)
         {
-			Character.LoadFromPath($"{path}/TableCharacter.bytes");
-			CharacterSpecial.LoadFromPath($"{path}/TableCharacterSpecial.bytes");
-			Move.LoadFromPath($"{path}/TableMove.bytes");
-			Skill.LoadFromPath($"{path}/TableSkill.bytes");
-			Spwaner.LoadFromPath($"{path}/TableSpwaner.bytes");
+			Hero.LoadFromPath($"{path}/TableHero.bytes");
+			HeroTower.LoadFromPath($"{path}/TableHeroTower.bytes");
+			Status.LoadFromPath($"{path}/TableStatus.bytes");
+			Stat.LoadFromPath($"{path}/TableStat.bytes");
+			Wave.LoadFromPath($"{path}/TableWave.bytes");
 
         }
         
         public static void LoadFromResources()
         {
-			Character.LoadFromResources($"Table/TableCharacter");
-			CharacterSpecial.LoadFromResources($"Table/TableCharacterSpecial");
-			Move.LoadFromResources($"Table/TableMove");
-			Skill.LoadFromResources($"Table/TableSkill");
-			Spwaner.LoadFromResources($"Table/TableSpwaner");
+			Hero.LoadFromResources($"Table/TableHero");
+			HeroTower.LoadFromResources($"Table/TableHeroTower");
+			Status.LoadFromResources($"Table/TableStatus");
+			Stat.LoadFromResources($"Table/TableStat");
+			Wave.LoadFromResources($"Table/TableWave");
 
         }
     }

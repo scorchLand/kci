@@ -13,4 +13,5 @@ public class HeroManager : ISystemComponent
     public void Dispose()
     {
 
+    }
 }
